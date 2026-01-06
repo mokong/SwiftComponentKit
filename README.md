@@ -1,148 +1,150 @@
 # SwiftComponentKit
 
+**English** | [中文](README.zh.md)
+
 [![Swift](https://img.shields.io/badge/Swift-5.0+-orange.svg)](https://swift.org)
-[![iOS](https://img.shields.io/badge/iOS-11.0+-blue.svg)](https://www.apple.com/ios/)
+[![iOS](https://img.shields.io/badge/iOS-13.0+-blue.svg)](https://www.apple.com/ios/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Swift通用组件库集合，提供常用的UI组件、Foundation扩展、网络请求、数据存储等功能。采用模块化设计，可按需引入，减少包体积。
+A comprehensive Swift component library collection providing commonly used UI components, Foundation extensions, network requests, data storage, and more. Designed with a modular architecture, allowing on-demand integration to reduce package size.
 
-## ✨ 特性
+## ✨ Features
 
-- 🎨 **UI组件**：Alert、Toast、Loading、EmptyState、Refresh等常用组件
-- 🔧 **Foundation扩展**：String、Date、Optional、Dictionary等类型扩展
-- 🌐 **网络请求**：基于Alamofire和Combine的网络请求封装
-- 💾 **数据存储**：UserDefaults、Keychain、Cache等存储方案
-- 🛠️ **工具库**：日志、权限管理、设备信息、加密等常用工具
-- 🖼️ **图片处理**：图片加载、缓存、处理等功能
-- 🌍 **多语言**：多语言管理功能
+- 🎨 **UI Components**: Alert, Toast, Loading, EmptyState, Refresh, and other commonly used components
+- 🔧 **Foundation Extensions**: Extensions for String, Date, Optional, Dictionary, and other types
+- 🌐 **Network Requests**: Network request wrapper based on Alamofire and Combine
+- 💾 **Data Storage**: Storage solutions including UserDefaults, Keychain, Cache, etc.
+- 🛠️ **Utilities**: Common utilities for logging, permission management, device information, encryption, etc.
+- 🖼️ **Image Processing**: Image loading, caching, and processing functionality
+- 🌍 **Localization**: Multi-language management functionality
 
-## 📦 模块说明
+## 📦 Module Overview
 
 ### SwiftComponentKitUI
-UI组件库，提供常用的UI扩展和组件：
-- UIColor、UIView、UIButton、UILabel等扩展
-- Alert、Toast、Loading、EmptyState等组件
-- UIViewController扩展（状态栏、导航栏、键盘管理等）
-- 下拉刷新和上拉加载组件
+UI component library providing commonly used UI extensions and components:
+- Extensions for UIColor, UIView, UIButton, UILabel, etc.
+- Components: Alert, Toast, Loading, EmptyState, etc.
+- UIViewController extensions (status bar, navigation bar, keyboard management, etc.)
+- Pull-to-refresh and load-more components
 
 ### SwiftComponentKitFoundation
-Foundation扩展库，提供常用的Foundation类型扩展：
-- Optional包装（wrapEmpty、wrapZero等）
-- Date和String转换
-- String验证（邮箱、手机号、URL等）
-- 屏幕尺寸和App信息获取
+Foundation extension library providing commonly used Foundation type extensions:
+- Optional wrapping (wrapEmpty, wrapZero, etc.)
+- Date and String conversion
+- String validation (email, phone number, URL, etc.)
+- Screen size and App information retrieval
 
 ### SwiftComponentKitImage
-图片处理库，提供图片处理、加载和缓存功能：
-- UIImage处理扩展
-- UIImageView加载和缓存
-- 图片缓存管理
+Image processing library providing image processing, loading, and caching functionality:
+- UIImage processing extensions
+- UIImageView loading and caching
+- Image cache management
 
 ### SwiftComponentKitNetwork
-网络请求库，基于Alamofire和Combine的网络请求封装：
-- 标准响应格式封装
-- 请求拦截器
-- 响应拦截器
-- 错误处理
+Network request library, a wrapper based on Alamofire and Combine:
+- Standard response format encapsulation
+- Request interceptors
+- Response interceptors
+- Error handling
 
 ### SwiftComponentKitStorage
-数据存储库，提供UserDefaults、Keychain、数据库等存储方案：
-- UserDefaults封装
-- Keychain封装
-- 内存缓存
+Data storage library providing storage solutions including UserDefaults, Keychain, and cache:
+- UserDefaults wrapper
+- Keychain wrapper
+- Memory cache
 
 ### SwiftComponentKitUtils
-工具库，提供日志、权限、加密等常用工具：
-- 日志管理
-- 权限管理
-- 设备信息
-- 加密工具
-- 文件管理
-- JSON处理
-- 定时器
-- 通知中心
+Utility library providing common utilities for logging, permissions, encryption, etc.:
+- Logging management
+- Permission management
+- Device information
+- Encryption utilities
+- File management
+- JSON processing
+- Timer
+- Notification center
 
 ### SwiftComponentKitLocalization
-多语言库，提供多语言管理功能。
+Localization library providing multi-language management functionality.
 
-## 🚀 安装
+## 🚀 Installation
 
-### 方式一：CocoaPods（推荐）
+### Option 1: CocoaPods (Recommended)
 
-#### 选项 A：分别引用各个子模块（推荐）
+#### Option A: Reference Individual Submodules (Recommended)
 
-在项目的 `Podfile` 中添加：
+Add to your project's `Podfile`:
 
 ```ruby
 target 'YourProject' do
   use_frameworks!
   
-  # MARK: - SwiftComponentKit（按需引入）
-  # UI组件库
+  # MARK: - SwiftComponentKit (Import as needed)
+  # UI Component Library
   pod 'SwiftComponentKitUI', :path => './SwiftComponentKit/SwiftComponentKitUI'
   
-  # Foundation扩展库
+  # Foundation Extension Library
   pod 'SwiftComponentKitFoundation', :path => './SwiftComponentKit/SwiftComponentKitFoundation'
   
-  # 图片处理库
+  # Image Processing Library
   pod 'SwiftComponentKitImage', :path => './SwiftComponentKit/SwiftComponentKitImage'
   
-  # 网络请求库
+  # Network Request Library
   pod 'SwiftComponentKitNetwork', :path => './SwiftComponentKit/SwiftComponentKitNetwork'
   
-  # 数据存储库
+  # Data Storage Library
   pod 'SwiftComponentKitStorage', :path => './SwiftComponentKit/SwiftComponentKitStorage'
   
-  # 工具库
+  # Utility Library
   pod 'SwiftComponentKitUtils', :path => './SwiftComponentKit/SwiftComponentKitUtils'
   
-  # 多语言库
+  # Localization Library
   pod 'SwiftComponentKitLocalization', :path => './SwiftComponentKit/SwiftComponentKitLocalization'
 end
 ```
 
-然后运行：
+Then run:
 
 ```bash
 pod install
 ```
 
-#### 选项 B：使用主 Podspec（聚合所有子模块）
+#### Option B: Use Main Podspec (Aggregates All Submodules)
 
 ```ruby
-# 使用所有模块
+# Use all modules
 pod 'SwiftComponentKit', :path => './SwiftComponentKit'
 
-# 或只使用需要的模块
+# Or use only needed modules
 pod 'SwiftComponentKit/UI', :path => './SwiftComponentKit'
 pod 'SwiftComponentKit/Foundation', :path => './SwiftComponentKit'
 ```
 
-### 方式二：Swift Package Manager (SPM)
+### Option 2: Swift Package Manager (SPM)
 
-#### 本地路径集成（无需发布）
+#### Local Path Integration (No Publishing Required)
 
-1. 在 Xcode 中选择项目文件（蓝色图标）
-2. **重要**：先选择主 Target，这样添加 Package 时会默认选中该 Target
-3. 点击 **"Package Dependencies"** 标签
-4. 点击 **"+"** 按钮
-5. 选择 **"Add Local..."**
-6. 浏览并选择 `SwiftComponentKit` 目录
-7. 在 "Add to Target" 中，勾选主 Target
-8. 在 "Package Products" 中，勾选需要的模块
-9. 点击 **"Add Package"**
+1. In Xcode, select the project file (blue icon)
+2. **Important**: Select the main Target first, so the Package will be added to this Target by default
+3. Click the **"Package Dependencies"** tab
+4. Click the **"+"** button
+5. Select **"Add Local..."**
+6. Browse and select the `SwiftComponentKit` directory
+7. In "Add to Target", check the main Target
+8. In "Package Products", check the modules you need
+9. Click **"Add Package"**
 
-#### 远程仓库集成（推荐）
+#### Remote Repository Integration (Recommended)
 
-1. 在 Xcode 中选择项目文件（蓝色图标）
-2. 选择主 Target
-3. 点击 **"Package Dependencies"** 标签
-4. 点击 **"+"** 按钮
-5. 在搜索框中输入：`https://github.com/mokong/SwiftComponentKit.git`
-6. 选择 **"Add Package"**
-7. 选择版本规则（推荐选择 "Up to Next Major Version" 并输入 `1.0.0`）
-8. 在 "Add to Target" 中，勾选主 Target
-9. 在 "Package Products" 中，勾选需要的模块：
+1. In Xcode, select the project file (blue icon)
+2. Select the main Target
+3. Click the **"Package Dependencies"** tab
+4. Click the **"+"** button
+5. Enter in the search box: `https://github.com/mokong/SwiftComponentKit.git`
+6. Select **"Add Package"**
+7. Choose version rule (recommended: select "Up to Next Major Version" and enter `1.0.0`)
+8. In "Add to Target", check the main Target
+9. In "Package Products", check the modules you need:
    - `SwiftComponentKitUI`
    - `SwiftComponentKitFoundation`
    - `SwiftComponentKitImage`
@@ -150,101 +152,101 @@ pod 'SwiftComponentKit/Foundation', :path => './SwiftComponentKit'
    - `SwiftComponentKitStorage`
    - `SwiftComponentKitUtils`
    - `SwiftComponentKitLocalization`
-10. 点击 **"Add Package"**
+10. Click **"Add Package"**
 
-**注意**：首次使用需要确保已创建并推送 Git 标签（tag），例如：
+**Note**: For first-time use, ensure Git tags have been created and pushed, for example:
 ```bash
 git tag -a 1.0.0 -m "Release version 1.0.0"
 git push origin 1.0.0
 ```
 
-## 📖 使用示例
+## 📖 Usage Examples
 
-### 1. UI组件
+### 1. UI Components
 
 ```swift
 import SwiftComponentKitUI
 
-// UIColor - HexString创建颜色
+// UIColor - Create color from HexString
 let color1 = UIColor(sck_hexString: "#FF0000")
 let color2 = UIColor(sck_hexString: "FF0000")
 let color3 = UIColor(sck_hexString: "0xFF0000")
 
-// UIView - 渐变背景
+// UIView - Gradient background
 view.sck_setGradientBackground(
     colors: [.red, .blue],
-    direction: .horizontal,  // 或 .vertical, .diagonalTopLeft, .diagonalTopRight
+    direction: .horizontal,  // or .vertical, .diagonalTopLeft, .diagonalTopRight
     locations: [0.0, 1.0],
     cornerRadius: 10
 )
 
-// UIView - 动画
+// UIView - Animations
 view.sck_fadeIn(duration: 0.3) {
-    print("淡入完成")
+    print("Fade in completed")
 }
-view.sck_shake()  // 震动动画
+view.sck_shake()  // Shake animation
 
-// UIView - 分割线
+// UIView - Divider
 view.sck_addBottomDivider(color: .gray, height: 1.0, leftMargin: 20, rightMargin: 20)
 
-// UIButton - 图片位置
-button.sck_setImagePosition(.top, spacing: 10)  // 图片在上，文字在下
+// UIButton - Image position
+button.sck_setImagePosition(.top, spacing: 10)  // Image on top, text below
 
-// UILabel - 行间距
-label.sck_setLineSpacing(5, text: "这是一段文字\n这是第二行")
+// UILabel - Line spacing
+label.sck_setLineSpacing(5, text: "This is a line\nThis is the second line")
 
 // Alert
 SCKAlert.show(
-    title: "提示",
-    message: "这是一个提示消息",
+    title: "Alert",
+    message: "This is an alert message",
     actions: [
-        SCKAlertAction(title: "取消", style: .cancel) {
-            print("取消")
+        SCKAlertAction(title: "Cancel", style: .cancel) {
+            print("Cancelled")
         },
-        SCKAlertAction(title: "确定", style: .default) {
-            print("确定")
+        SCKAlertAction(title: "OK", style: .default) {
+            print("Confirmed")
         }
     ]
 )
 
 // Toast
-SCKToast.show("操作成功", duration: 2.0)
-SCKToast.show("加载完成", duration: 3.0, position: .bottom, in: view)
+SCKToast.show("Operation successful", duration: 2.0)
+SCKToast.show("Loading completed", duration: 3.0, position: .bottom, in: view)
 
 // Loading
-SCKLoadingIndicator.show(in: view, message: "加载中...")
+SCKLoadingIndicator.show(in: view, message: "Loading...")
 SCKLoadingIndicator.hide()
 
 // EmptyState
 SCKEmptyStateView.show(
     in: view,
     image: UIImage(named: "empty"),
-    title: "暂无数据",
-    message: "请稍后再试"
+    title: "No Data",
+    message: "Please try again later"
 )
 
-// UIViewController扩展
+// UIViewController Extensions
 class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 状态栏设置
+        // Status bar settings
         sck_statusBarHidden = false
         sck_statusBarStyle = .lightContent
         
-        // 导航栏设置
+        // Navigation bar settings
         sck_navigationBarHidden = true
         
-        // 侧滑返回设置
+        // Swipe back settings
         sck_swipeBackEnabled = true
         sck_swipeBackInterceptor = {
             return self.canGoBack()
         }
         
-        // 键盘管理
+        // Keyboard management
         sck_addKeyboardObserver()
         sck_keyboardWillShow = { frame in
-            print("键盘高度: \(frame.height)")
+            print("Keyboard height: \(frame.height)")
         }
         sck_hideKeyboardWhenTappedAround()
     }
@@ -254,43 +256,43 @@ class MyViewController: UIViewController {
     }
 }
 
-// 获取当前视图控制器
+// Get current view controller
 if let currentVC = UIViewController.sck_current() {
-    print("当前VC: \(currentVC)")
+    print("Current VC: \(currentVC)")
 }
 ```
 
-### 2. Foundation扩展
+### 2. Foundation Extensions
 
 ```swift
 import SwiftComponentKitFoundation
 
-// Optional包装
+// Optional wrapping
 let value: String? = nil
 let result = value.sck_wrapEmpty  // ""
 
 let intValue: Int? = nil
 let intResult = intValue.sck_wrapZero  // 0
 
-// Date转String
+// Date to String
 let date = Date()
 let dateString = date.sck_toString(format: "yyyy-MM-dd HH:mm:ss")
 let utcString = date.sck_toStringUTC(format: "yyyy-MM-dd")
 
-// String转Date
+// String to Date
 let dateFromString = "2021-01-01".sck_toDate(format: "yyyy-MM-dd")
 
-// 时间戳转Date
+// Timestamp to Date
 let dateFromTimestamp = Date.sck_fromTimestamp(1609459200)
 let dateFromMilliseconds = Date.sck_fromMilliseconds(1609459200000)
 
-// App信息
+// App information
 let version = String.sck_appVersion
 let buildVersion = String.sck_appBuildVersion
 let appName = String.sck_appName
 let bundleID = String.sck_appBundleID
 
-// 屏幕信息
+// Screen information
 let width = CGFloat.sck_screenWidth
 let height = CGFloat.sck_screenHeight
 let statusBarH = CGFloat.sck_statusBarHeight
@@ -299,40 +301,40 @@ let tabBarH = CGFloat.sck_tabBarHeight
 let safeAreaTop = CGFloat.sck_safeAreaTop
 let safeAreaBottom = CGFloat.sck_safeAreaBottom
 
-// String验证
+// String validation
 let email = "example@example.com"
 if email.sck_isValidEmail {
-    print("有效邮箱")
+    print("Valid email")
 }
 
 let phone = "13800138000"
 if phone.sck_isValidPhone {
-    print("有效手机号")
+    print("Valid phone number")
 }
 
 let url = "https://www.example.com"
 if url.sck_isValidURL {
-    print("有效URL")
+    print("Valid URL")
 }
 
-// String处理
+// String processing
 let str = "  hello world  "
 let trimmed = str.sck_trimmed  // "hello world"
 let reversed = str.sck_reversed  // "  dlrow olleh  "
 ```
 
-### 3. 网络请求
+### 3. Network Requests
 
 ```swift
 import SwiftComponentKitNetwork
 
-// 定义响应模型
+// Define response model
 struct UserResponse: Codable {
     let id: Int
     let name: String
 }
 
-// 发起请求
+// Make request
 SCKNetworkManager.shared.requestStandard(
     url: "https://api.example.com/user",
     method: .get
@@ -340,31 +342,31 @@ SCKNetworkManager.shared.requestStandard(
     switch result {
     case .success(let response):
         if response.isSuccess {
-            print("用户: \(response.data?.name ?? "")")
+            print("User: \(response.data?.name ?? "")")
         } else {
-            print("错误: \(response.message ?? "")")
+            print("Error: \(response.message ?? "")")
         }
     case .failure(let error):
-        print("网络错误: \(error)")
+        print("Network error: \(error)")
     }
 }
 
-// POST请求
+// POST request
 SCKNetworkManager.shared.requestStandard(
     url: "https://api.example.com/user",
     method: .post,
     parameters: ["name": "John"],
     headers: ["Authorization": "Bearer token"]
 ) { (result: Result<SCKStandardResponse<UserResponse>, SCKNetworkError>) in
-    // 处理结果
+    // Handle result
 }
 
-// 使用请求拦截器
+// Use request interceptor
 let interceptor = SCKRequestInterceptor()
 interceptor.add(MyCustomInterceptor())
 ```
 
-### 4. 数据存储
+### 4. Data Storage
 
 ```swift
 import SwiftComponentKitStorage
@@ -389,193 +391,192 @@ SCKCache.shared.remove(forKey: "cacheKey")
 SCKCache.shared.removeAll()
 ```
 
-### 5. 工具库
+### 5. Utilities
 
 ```swift
 import SwiftComponentKitUtils
 
-// 日志
-SCKLogger.info("信息")
-SCKLogger.warning("警告")
-SCKLogger.error("错误")
-SCKLogger.debug("调试")
+// Logging
+SCKLogger.info("Info")
+SCKLogger.warning("Warning")
+SCKLogger.error("Error")
+SCKLogger.debug("Debug")
 
-// 权限管理
+// Permission management
 SCKPermissionManager.requestPermission(.camera) { granted in
     if granted {
-        print("相机权限已授予")
+        print("Camera permission granted")
     }
 }
 
 SCKPermissionManager.requestPermission(.photoLibrary) { granted in
-    // 处理权限结果
+    // Handle permission result
 }
 
-// 设备信息
+// Device information
 let deviceInfo = SCKDeviceInfo.shared
-print("设备型号: \(deviceInfo.model)")
-print("设备名称: \(deviceInfo.name)")
-print("系统版本: \(deviceInfo.systemVersion)")
-print("是否为iPhone: \(deviceInfo.isiPhone)")
-print("是否为模拟器: \(deviceInfo.isSimulator)")
-print("屏幕宽度: \(deviceInfo.screenWidth)")
-print("屏幕高度: \(deviceInfo.screenHeight)")
+print("Device model: \(deviceInfo.model)")
+print("Device name: \(deviceInfo.name)")
+print("System version: \(deviceInfo.systemVersion)")
+print("Is iPhone: \(deviceInfo.isiPhone)")
+print("Is Simulator: \(deviceInfo.isSimulator)")
+print("Screen width: \(deviceInfo.screenWidth)")
+print("Screen height: \(deviceInfo.screenHeight)")
 
-// 加密
+// Encryption
 let plainText = "Hello World"
 let encrypted = SCKCrypto.encrypt(plainText, key: "secretKey")
 let decrypted = SCKCrypto.decrypt(encrypted, key: "secretKey")
 
-// JSON处理
+// JSON processing
 let dict = ["name": "John", "age": 30]
 let jsonString = SCKJSON.string(from: dict)
 let parsedDict = SCKJSON.dictionary(from: jsonString)
 
-// 定时器
+// Timer
 let timer = SCKTimer.scheduledTimer(timeInterval: 1.0, repeats: true) {
-    print("定时器触发")
+    print("Timer fired")
 }
 timer.invalidate()
 
-// 延迟执行
+// Delayed execution
 SCKTimer.after(2.0) {
-    print("2秒后执行")
+    print("Executed after 2 seconds")
 }
 
-// 通知中心
+// Notification center
 SCKNotificationCenter.addObserver(name: "MyNotification") { notification in
-    print("收到通知: \(notification)")
+    print("Received notification: \(notification)")
 }
 
 SCKNotificationCenter.post(name: "MyNotification", object: nil)
 ```
 
-### 6. 图片处理
+### 6. Image Processing
 
 ```swift
 import SwiftComponentKitImage
 
-// UIImageView加载图片
+// UIImageView load image
 imageView.sck_setImage(url: "https://example.com/image.jpg", placeholder: UIImage(named: "placeholder"))
 
-// UIImage处理
+// UIImage processing
 let resizedImage = image.sck_resize(to: CGSize(width: 100, height: 100))
 let roundedImage = image.sck_rounded(cornerRadius: 10)
 let croppedImage = image.sck_crop(to: CGRect(x: 0, y: 0, width: 100, height: 100))
 ```
 
-### 7. 多语言
+### 7. Localization
 
 ```swift
 import SwiftComponentKitLocalization
 
-// 使用多语言管理器
+// Use localization manager
 let localizedString = SCKLocalizationManager.shared.localizedString(forKey: "hello")
 ```
 
-## 🔧 配置说明
+## 🔧 Configuration
 
-### 依赖关系
+### Dependencies
 
-- `SwiftComponentKitUI` → 依赖 `SnapKit` (~> 5.0)
-- `SwiftComponentKitNetwork` → 依赖 `Alamofire` (~> 5.4)
-- `SwiftComponentKitStorage` → 依赖 `SwiftComponentKitUtils` 和 `SwiftComponentKitFoundation`
+- `SwiftComponentKitUI` → depends on `SnapKit` (~> 5.0)
+- `SwiftComponentKitNetwork` → depends on `Alamofire` (~> 5.4)
+- `SwiftComponentKitStorage` → depends on `SwiftComponentKitUtils` and `SwiftComponentKitFoundation`
 
-### 平台要求
+### Platform Requirements
 
 - **iOS**: 13.0+
 - **Swift**: 5.0+
 - **Xcode**: 12.0+
 
-## ⚠️ 注意事项
+## ⚠️ Notes
 
-1. **依赖冲突**：
-   - 确保主项目的 `Alamofire` 版本与组件库兼容（5.4+）
-   - 确保 `SnapKit` 版本兼容（5.0+）
+1. **Dependency Conflicts**:
+   - Ensure the main project's `Alamofire` version is compatible (5.4+)
+   - Ensure `SnapKit` version is compatible (5.0+)
 
-2. **命名冲突**：
-   - 所有扩展方法使用 `sck_` 前缀，避免冲突
-   - 如果主项目有类似扩展，注意区分
+2. **Naming Conflicts**:
+   - All extension methods use the `sck_` prefix to avoid conflicts
+   - If the main project has similar extensions, be careful to distinguish them
 
-3. **模块导入**：
-   - 按需导入，避免导入不需要的模块
-   - 某些模块之间有依赖关系，注意导入顺序
+3. **Module Imports**:
+   - Import on demand, avoid importing unnecessary modules
+   - Some modules have dependencies, pay attention to import order
 
-4. **编译设置**：
-   - 确保主项目的 Swift 版本 >= 5.0
-   - 确保 iOS 部署目标 >= 11.0
+4. **Build Settings**:
+   - Ensure the main project's Swift version >= 5.0
+   - Ensure iOS deployment target >= 13.0
 
-## 🐛 问题排查
+## 🐛 Troubleshooting
 
-### 问题1：pod install 失败
+### Issue 1: pod install fails
 
-**解决方案**：
+**Solution**:
 ```bash
-# 清理缓存
+# Clean cache
 pod cache clean --all
 pod deintegrate
 pod install
 ```
 
-### 问题2：编译错误 - 找不到模块
+### Issue 2: Build error - Module not found
 
-**解决方案**：
-1. 检查 Podfile 路径是否正确
-2. 确保 podspec 文件存在
-3. 重新运行 `pod install`
+**Solution**:
+1. Check if the Podfile path is correct
+2. Ensure podspec files exist
+3. Run `pod install` again
 
-### 问题3：依赖冲突
+### Issue 3: Dependency conflicts
 
-**解决方案**：
-1. 检查主项目的依赖版本
-2. 确保版本兼容
-3. 使用 `pod update` 更新依赖
+**Solution**:
+1. Check the main project's dependency versions
+2. Ensure version compatibility
+3. Use `pod update` to update dependencies
 
-### 问题4：SPM 集成后找不到模块
+### Issue 4: Module not found after SPM integration
 
-**解决方案**：
-1. 确保已正确添加 Package Dependencies
-2. 检查 Target 是否正确勾选
-3. 清理构建文件夹（Shift+Cmd+K）后重新编译
+**Solution**:
+1. Ensure Package Dependencies are correctly added
+2. Check if the Target is correctly selected
+3. Clean build folder (Shift+Cmd+K) and rebuild
 
-## ⚠️ 重要提示：避免代码重复
+## ⚠️ Important: Avoid Code Duplication
 
-如果多个项目都使用**本地路径**方式导入组件库，会导致代码重复和维护困难。
+If multiple projects use the **local path** method to import the component library, it will lead to code duplication and maintenance difficulties.
 
-**推荐方案**：
-- 🏢 **多项目共享**：使用 [Git Submodule](./BEST_PRACTICES.md#方案一git-submodule推荐用于多项目共享)
-- 🌐 **公开发布**：使用 [SPM 远程仓库](./BEST_PRACTICES.md#方案二spm-远程仓库推荐用于公开发布)
-- 🏛️ **企业内部分享**：使用 [CocoaPods 私有仓库](./BEST_PRACTICES.md#方案三cocoapods-私有仓库推荐用于企业内部分享)
+**Recommended Solutions**:
+- 🏢 **Multi-project Sharing**: Use [Git Submodule](./BEST_PRACTICES.md#方案一git-submodule推荐用于多项目共享)
+- 🌐 **Public Release**: Use [SPM Remote Repository](./BEST_PRACTICES.md#方案二spm-远程仓库推荐用于公开发布)
+- 🏛️ **Enterprise Internal Sharing**: Use [CocoaPods Private Repository](./BEST_PRACTICES.md#方案三cocoapods-私有仓库推荐用于企业内部分享)
 
-详细说明请查看：[最佳实践指南](./BEST_PRACTICES.md)
+For detailed instructions, see: [Best Practices Guide](./BEST_PRACTICES.md)
 
-
-## 📄 许可证
+## 📄 License
 
 MIT License
 
 Copyright (c) 2026 SwiftComponentKit
 
-## 👥 贡献
+## 👥 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-### 贡献指南
+### Contribution Guidelines
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
----
-
-## 📞 联系方式
-
-如有问题或建议，请通过以下方式联系：
-- 提交 [Issue](https://github.com/mokong/SwiftComponentKit/issues)
-- 创建 [Pull Request](https://github.com/mokong/SwiftComponentKit/pulls)
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-**⭐ 如果这个项目对你有帮助，请给个 Star！**
+## 📞 Contact
+
+For questions or suggestions, please contact us through:
+- Submit an [Issue](https://github.com/mokong/SwiftComponentKit/issues)
+- Create a [Pull Request](https://github.com/mokong/SwiftComponentKit/pulls)
+
+---
+
+**⭐ If this project helps you, please give it a Star!**
