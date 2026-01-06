@@ -132,9 +132,31 @@ pod 'SwiftComponentKit/Foundation', :path => './SwiftComponentKit'
 8. 在 "Package Products" 中，勾选需要的模块
 9. 点击 **"Add Package"**
 
-#### 远程仓库集成
+#### 远程仓库集成（推荐）
 
-在 Xcode 中添加 Package：`https://github.com/mokong/SwiftComponentKit.git`
+1. 在 Xcode 中选择项目文件（蓝色图标）
+2. 选择主 Target
+3. 点击 **"Package Dependencies"** 标签
+4. 点击 **"+"** 按钮
+5. 在搜索框中输入：`https://github.com/mokong/SwiftComponentKit.git`
+6. 选择 **"Add Package"**
+7. 选择版本规则（推荐选择 "Up to Next Major Version" 并输入 `1.0.0`）
+8. 在 "Add to Target" 中，勾选主 Target
+9. 在 "Package Products" 中，勾选需要的模块：
+   - `SwiftComponentKitUI`
+   - `SwiftComponentKitFoundation`
+   - `SwiftComponentKitImage`
+   - `SwiftComponentKitNetwork`
+   - `SwiftComponentKitStorage`
+   - `SwiftComponentKitUtils`
+   - `SwiftComponentKitLocalization`
+10. 点击 **"Add Package"**
+
+**注意**：首次使用需要确保已创建并推送 Git 标签（tag），例如：
+```bash
+git tag -a 1.0.0 -m "Release version 1.0.0"
+git push origin 1.0.0
+```
 
 ## 📖 使用示例
 
